@@ -11,12 +11,6 @@ to be retrieved later.
 
 ## installation
 
-first ensure you have the `wheel` module installed by running
-
-`pip install wheel`
-
-then:
-
 `pip install git+https://git.saizo.gay/saizo/sai_logging.git`
 
 ## use
