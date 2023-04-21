@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sai_logging"
+version = "0.2.0"
+authors = [
+    {name = "saizo", email = "saizo@simplemail.is"}
+]
+description = "personal logger used for cron scripts"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+homepage = "https://git.saizo.gay/saizo/sai_logging"
