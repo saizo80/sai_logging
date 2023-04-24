@@ -19,8 +19,8 @@ to be retrieved later.
 import sai_logging as log
 
 logging = log.Logger(
-    log_file_name='/path/to/logfile',
-    log_level=log.DEBUG,
+    log_file_name='/path/to/logfile', # optional
+    log_level=log.DEBUG, # optional (default INFO)
 )
 
 logging.debug('debug level log')
