@@ -11,23 +11,38 @@ to be retrieved later.
 
 ## installation
 
-`pip install git+https://git.saizo.gay/saizo/sai_logging.git`
+if you have added git.saizo.gay to your pip index for either user or global (see package [instructions](https://git.saizo.gay/saizo/-/packages/pypi/sai-logging/)):
+
+```bash
+pip install sai_logging
+```
+
+if you have not then you will need to add it as an extra index in the install statement:
+
+```bash
+pip install --extra-index-url https://git.saizo.gay/api/packages/saizo/pypi/simple/ sai_logging
+```
 
 ## use
 
 ```python
-import sai_logging as log
+import sai_logging as logging
 
-logging = log.Logger(
-    log_file_name='/path/to/logfile', # optional
-    log_level=log.DEBUG, # optional (default INFO)
+# all arguments are optional
+log = logging.Logger(
+    log_file = "/path/to/logfile",
+    color = True,
+    stream_level = logging.INFO,
+    file_level = logging.DEBUG,
+    log_stdout = True,
+    stdout_level = logging.INFO,
 )
 
-logging.debug('debug level log')
-logging.info('info level log')
-logging.warning('warning level log')
-logging.error('error level log')
-logging.critical('critical level log')
+log.debug('debug level log')
+log.info('info level log')
+log.warning('warning level log')
+log.error('error level log')
+log.critical('critical level log')
 
-print(logging.get_log())
+print(log.get_log())
 ```
