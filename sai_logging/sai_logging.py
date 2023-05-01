@@ -5,7 +5,7 @@ import shutil
 import sys
 from io import StringIO
 
-from .color_format import ColorFormatter
+from .color_format import LinuxColorFormatter, DiscordColorFormatter
 
 
 class Logger(object):
@@ -32,7 +32,8 @@ class Logger(object):
 
         # add logger formatting
         if color:
-            formatter = ColorFormatter()
+            formatter = LinuxColorFormatter()
+            discord_formatter = DiscordColorFormatter()
         else:
             formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
 
@@ -47,7 +48,7 @@ class Logger(object):
         # add the stream handler
         self.stream = StringIO()
         stream_handler = logging.StreamHandler(self.stream)
-        stream_handler.setFormatter(formatter)
+        stream_handler.setFormatter(discord_formatter)
         stream_handler.setLevel(stream_level)
         self.logger.addHandler(stream_handler)
 
